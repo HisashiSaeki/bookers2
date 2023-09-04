@@ -62,11 +62,9 @@
       </nav>
     </header>
     <main>
-      <div class="flash-massage">
         <% flash.each do |message_type, message| %>
-        <div class="flash-message <%= message_type %>"><%= message %></div>
+          <div class="<%= message_type %>"><%= message %></div>
         <% end %>
-      </div>
       <div class="main-contents mt-3">
         <%= yield %>
       </div>

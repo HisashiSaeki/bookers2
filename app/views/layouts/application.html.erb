@@ -61,8 +61,15 @@
         </div>
       </nav>
     </header>
-    <main class="pt-3">
-      <%= yield %>
+    <main>
+      <div class="flash-massage">
+        <% flash.each do |message_type, message| %>
+        <div class="flash-message <%= message_type %>"><%= message %></div>
+        <% end %>
+      </div>
+      <div class="main-contents mt-3">
+        <%= yield %>
+      </div>
     </main>
     <footer class="mt-5">
       <div class="container-fluid">
